@@ -35,7 +35,7 @@ void Servo_position(int32_t sangle)
 		sangle = 179;
 	if ( sangle < 0 )
 		sangle = 1;
-	TIM3->CCR3 = ( ((float)sangle / 180) ) * 2000 + 499;//将0-180度数转换为时间0.5ms~2.5ms
+	TIM2->CCR1 = ( ((float)sangle / 180) ) * 2000 + 499;//将0-180度数转换为时间0.5ms~2.5ms
 }
 
  /**
@@ -57,7 +57,7 @@ void Servo_GPIO_Config(void)
 	GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;		    // 复用推挽输出
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOB, &GPIO_InitStructure);
+	GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 
 /*************************************************
