@@ -49,7 +49,7 @@ void stepping_motor_pwm_Init(void)
 	Base_InitStructure.TIM_ClockDivision = 0;
 	Base_InitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	Base_InitStructure.TIM_Period = 999;
-	Base_InitStructure.TIM_Prescaler = 0;
+	Base_InitStructure.TIM_Prescaler = 71;
 	Base_InitStructure.TIM_RepetitionCounter = 0;
 	
 	TIM_TimeBaseInit(TIM3,&Base_InitStructure);
